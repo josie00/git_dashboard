@@ -3,7 +3,8 @@ from datetime import datetime, timedelta
 from subprocess import call
 if __name__ == "__main__":
     now = datetime.today()
-    for x in range(0, 2):
+    os.system("mkdir test_data")
+    for x in range(0, 7):
         now = now - timedelta(days=1)
         month = str(now.month)
         day = str(now.day)

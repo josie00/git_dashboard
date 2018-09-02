@@ -23,7 +23,7 @@ public class ChartReader implements Runnable {
         String filename;
         JSONParser parser = new JSONParser();
 
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 24; i++) {
             filename = "./test_data/"+date+"-"+i+".json";
             try {
                 Scanner s = new Scanner(new File(filename));

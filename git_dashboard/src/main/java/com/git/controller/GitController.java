@@ -34,7 +34,6 @@ public class GitController {
 	@GetMapping("/top_result")
 	public String getTopResult(Model model) {
 		LocalDate today = LocalDate.now();
-		today = today.minusDays(4);
 		List<String> week = new ArrayList<>();
 
 
@@ -42,7 +41,7 @@ public class GitController {
 
 		List<Thread> threads = new ArrayList<>();
 
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < 7; i++) {
 			today = today.minusDays(1);
             System.out.println(today.toString());
 			week.add(today.toString());
@@ -99,11 +98,10 @@ public class GitController {
         Map<String, Integer> result = new HashMap<>();
 
         LocalDate today = LocalDate.now();
-        today = today.minusDays(4);
         List<String> week = new ArrayList<>();
         List<Thread> threads = new ArrayList<>();
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 7; i++) {
             today = today.minusDays(1);
             System.out.println(today.toString());;
             result.put(today.toString(), 0);

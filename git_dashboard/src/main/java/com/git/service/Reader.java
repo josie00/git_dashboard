@@ -26,7 +26,7 @@ public class Reader implements Runnable {
     public void run() {
         String filename;
         JSONParser parser = new JSONParser();
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 24; i++) {
             System.out.println("i: " + i);
             filename = "./test_data/"+date+"-"+i+".json";
             try {
