@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Github Dashboard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Github Board</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/score">Start</a></li>
+					<li class="active"><a href="#">Result</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<table class="table table-striped">
+			<tr>
+				<th>#</th>
+				<th>Repo Name</th>
+
+				<th>Fork and Pull Sum Number</th>
+				<th>Action</th>
+			</tr>
+			<tr th:each="repo,rowStat: ${list}">
+				<td th:text="${rowStat.count}"></td>
+				<td><a th:href="${repo.url}" th:text="${repo.fullName}" th:target="_blank"></a></td>
+				<td th:text="${repo.forkAndPull}"></td>
+				<td><a th:href="@{/getTrending(name=${repo.fullName})}" th:target="_blank">See Graph</a></td>
+			</tr>
+		</table>
+
+	
+	
+	</div>
+	<!-- /.container -->
+
+</body>
+</html>
