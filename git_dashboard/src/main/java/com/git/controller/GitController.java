@@ -95,7 +95,7 @@ public class GitController {
     @GetMapping("/getTrendingData")
     @ResponseBody
     public Map<String, Integer> getTrendingData(Model model, @RequestParam("name") String name) {
-        Map<String, Integer> result = new HashMap<>();
+        Map<String, Integer> result = new TreeMap<>();
 
         LocalDate today = LocalDate.now();
         List<String> week = new ArrayList<>();

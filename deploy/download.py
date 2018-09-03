@@ -13,7 +13,8 @@ if __name__ == "__main__":
         if (len(day) == 1):
             day = "0" + day
         date = str(now.year) + "-" + month + "-" + day;
-        os.system("wget http://data.gharchive.org/" + date +"-{0..23}.json.gz -P ./test_data")
-        os.system("gunzip ./test_data/" + date+"-{0..23}.json.gz")
+        for y in range(0, 24):
+            os.system("wget http://data.gharchive.org/" + date +"-" + str(y) + ".json.gz -P ./test_data")
+            os.system("gunzip ./test_data/" + date+"-" + str(y) + ".json.gz")
 
 
